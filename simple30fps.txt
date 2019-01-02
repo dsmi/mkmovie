@@ -1,0 +1,7 @@
+# Concat, scale to 1080p, resample to 30fps
+x $copts{ '12.fps' } = '-r 30000/1001'
+x $copts{ '22.flt' } = '-vf "$rcs"'
+x $rcs = 'scale=1920:1080,setpts=0.5*PTS';
+GOPR0398.MP4 0:00 99:99
+GP010398.MP4 0:00 99:99
+

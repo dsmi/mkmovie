@@ -60,7 +60,8 @@ while(<STDIN>)
         print "Doing $partfn: $movfile from $starts to $ends duration $dur\n";
         my $cmdl = join(' ', @copts{sort keys %copts}); # compose the cmdline
         $cmdl =~ s/(\$\w+)/$1/eeg; # expand variables
-        print "cmdline: $cmdl\n";
+        $cmdl =~ s/(\$\w+)/$1/eeg; # twice
+        print "cmdline  : $cmdl\n";
         system($cmdl) == 0 or die "system $cmdl failed: $?";
         printf $ofh "file $partfn\n";
     }

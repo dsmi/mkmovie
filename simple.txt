@@ -1,0 +1,6 @@
+# Concat, scale to 1080p
+x $copts{ '22.flt' } = '-vf "$rcs"'
+x $rcs = 'scale=1920:1080';
+GOPR0398.MP4 0:00 99:99
+GP010398.MP4 0:00 99:99
+

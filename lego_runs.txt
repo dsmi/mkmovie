@@ -1,0 +1,16 @@
+# Lego runs, resample the first two from 60 to 30 fps
+x $fnt = "fontfile=calibri.ttf:fontcolor=white:fontsize=36";
+x $x1 = 70; $y1 = 970; $x2 = $x1 + 5; $y2 = $y1 + 5;
+x $fnt = "fontfile=calibri.ttf:fontsize=72:fontcolor=white";
+x $fntb = "fontfile=calibri.ttf:fontsize=72:fontcolor=black\@0.5";
+x $dtxt = 'drawtext=text=$txt:x=$x2:y=$y2:$fntb,drawtext=text=$txt:x=$x1:y=$y1:$fnt';
+x $copts{ '22.flt' } = '-vf "$rcs,$dtxt"'
+x $copts{ '12.fps' } = '-r 30000/1001'
+x $rcs = 'scale=1920:1080,setpts=0.5*PTS';
+x $txt = "Run 1";
+GOPR0400.MP4 0:0 9:4
+x $rcs = 'scale=1920:1080';
+x $txt = "Run 2";
+GOPR0405.MP4 0:0 9:4
+x $txt = "Run 3";
+GOPR0408.MP4 0:0 9:4
