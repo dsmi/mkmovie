@@ -1,0 +1,49 @@
+# print text
+x $fnt = "fontfile=calibri.ttf:fontcolor=white:fontsize=56";
+x $tx = 50;
+x $ty = 950;
+x $dtxt = 'drawtext=text=$caption:x=$tx:y=$ty:$fnt';
+x $copts{ '22.flt' } = "-vf \"$dtxt\""
+
+x $caption = ''
+
+# You can keep this
+C0001.MP4 55:05 55:17
+x $caption = '\"You can keep this in the highlights!\"'
+C0001.MP4 55:17 55:21
+x $caption = ''
+
+# Wouldn't this match be boring if we weren't here?
+C0001.MP4 52:13 52:36
+x $caption = '\"Wouldn\\\\\\\'t this match be boring if we weren\\\\\\\'t here?\"'
+C0001.MP4 52:36 52:41
+x $caption = ''
+
+x $caption = 'From the beginning of the match...'
+C0001.MP4 1:24 1:34
+x $caption = ''
+C0001.MP4 1:34 1:44
+C0001.MP4 3:10 3:32
+C0001.MP4 6:18 6:50
+C0001.MP4 18:58 19:31
+C0001.MP4 27:16 27:37
+C0001.MP4 28:30 28:45
+C0001.MP4 29:58 30:07
+C0001.MP4 31:08 31:37
+C0001.MP4 37:31 37:57
+C0001.MP4 39:24 39:41
+C0001.MP4 41:47 42:10
+C0001.MP4 42:57 43:15
+C0001.MP4 44:53 45:04
+C0001.MP4 47:11 48:17
+C0001.MP4 48:36 49:14
+C0001.MP4 49:50 50:06
+C0001.MP4 50:30 50:47
+
+C0002.MP4 18:44 19:15
+C0002.MP4 20:17 20:30
+C0002.MP4 25:26 25:46
+C0002.MP4 46:50 47:25
+
+
+
