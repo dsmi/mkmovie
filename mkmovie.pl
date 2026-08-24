@@ -23,7 +23,7 @@ my $listfn = 'mylist.txt';
 
 sub parse_time
 {
-    my($min, $sec) = $_[0] =~ /(\d+):(\d+)/;
+    my($min, $sec) = $_[0] =~ /(\d+):(\d+.?\d*)/;
     return $min * 60 + $sec;
 }
 
