@@ -21,6 +21,9 @@ my %copts = (
 my $ffm = 'ffmpeg';
 my $listfn = 'mylist.txt';
 
+# speed up/slow down settings
+my $slowdown = 1.0;
+
 sub parse_time
 {
     my($min, $sec) = $_[0] =~ /(\d+):(\d+.?\d*)/;
@@ -55,7 +58,15 @@ while(<STDIN>)
         my ($movfile, $starts, $ends) = split(/\s+/);
         my $start = parse_time($starts);
         my $end = parse_time($ends);
-        my $dur = $end - $start;
+        my $dur = ( $end - $start ) * $slowdown;
+        if ( 1.0 == $slowdown )
+        {
+            $copts{ '23.spdf' } = '';
+        }
+        else
+        {
+            $copts{ '23.spdf' } = ' -filter:v "setpts=$slowdown*PTS,fps=30000/1001" -an '
+        }
         my $partfn = sprintf("part%03d.mp4", ++$npart);
         print "Doing $partfn: $movfile from $starts to $ends duration $dur\n";
         my $cmdl = join(' ', @copts{sort keys %copts}); # compose the cmdline
